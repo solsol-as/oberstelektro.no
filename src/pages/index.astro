@@ -1,0 +1,395 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Oberst Elektro AS",
+  "description": "Elektrisk installasjonsarbeid i Oslo og omegn",
+  "url": "https://oberstelektro.no",
+  "email": "post@oberstelektro.no",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Oberst Rodes vei 108B",
+    "postalCode": "1165",
+    "addressLocality": "Oslo",
+    "addressCountry": "NO"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Espen Bordal Strand"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Oslo"
+  }
+};
+---
+
+<Layout
+  title="Oberst Elektro AS – Elektriker i Oslo"
+  description="Oberst Elektro AS utfører elektrisk installasjonsarbeid i Oslo og omegn. Kontakt oss for befaring og tilbud."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">&#9889;</span>
+        <span class="logo-text">Oberst Elektro AS</span>
+      </div>
+      <nav aria-label="Hovednavigasjon">
+        <ul>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#om-oss">Om oss</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Introduksjon">
+      <div class="container">
+        <h1>Din elektriker i Oslo</h1>
+        <p>
+          Vi utfører alt innen elektrisk installasjonsarbeid for private og
+          næringskunder i Oslo og omegn. Trygt, effektivt og i henhold til
+          gjeldende forskrifter.
+        </p>
+        <a href="#kontakt" class="btn">Ta kontakt</a>
+      </div>
+    </section>
+
+    <section id="tjenester" class="services" aria-label="Våre tjenester">
+      <div class="container">
+        <h2>Våre tjenester</h2>
+        <ul class="services-grid">
+          <li class="service-card">
+            <h3>Elektrisk installasjon</h3>
+            <p>
+              Nyinstallasjon og oppgradering av elektriske anlegg i boliger og
+              næringsbygg.
+            </p>
+          </li>
+          <li class="service-card">
+            <h3>Feilsøking og reparasjon</h3>
+            <p>
+              Rask og pålitelig feilsøking ved strømproblemer, kortslutninger
+              og jordfeil.
+            </p>
+          </li>
+          <li class="service-card">
+            <h3>Sikringsskap</h3>
+            <p>
+              Oppgradering og utskifting av sikringsskap for økt sikkerhet og
+              kapasitet.
+            </p>
+          </li>
+          <li class="service-card">
+            <h3>Belysning</h3>
+            <p>
+              Planlegging og installasjon av innvendig og utvendig belysning
+              for hjem og bedrift.
+            </p>
+          </li>
+          <li class="service-card">
+            <h3>Elbillading</h3>
+            <p>
+              Installasjon av ladestasjon for elbil hjemme eller på
+              arbeidsplassen.
+            </p>
+          </li>
+          <li class="service-card">
+            <h3>Kontroll og dokumentasjon</h3>
+            <p>
+              Elsikkerhetskontroll, termografering og samsvarserklæring for
+              ditt elektriske anlegg.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="om-oss" class="about" aria-label="Om oss">
+      <div class="container">
+        <h2>Om oss</h2>
+        <p>
+          <strong>Oberst Elektro AS</strong> er et elektrikerfirma basert i
+          Oslo, drevet av <strong>Espen Bordal Strand</strong>. Vi
+          spesialiserer oss på elektrisk installasjonsarbeid og leverer
+          kvalitetstjenester til både private husholdninger og bedrifter.
+        </p>
+        <dl class="info-list">
+          <div class="info-item">
+            <dt>Organisasjonsnummer</dt>
+            <dd>932 564 467</dd>
+          </div>
+          <div class="info-item">
+            <dt>Daglig leder</dt>
+            <dd>Espen Bordal Strand</dd>
+          </div>
+          <div class="info-item">
+            <dt>Bransje</dt>
+            <dd>Elektrisk installasjonsarbeid (NACE 43.210)</dd>
+          </div>
+          <div class="info-item">
+            <dt>Adresse</dt>
+            <dd>Oberst Rodes vei 108B, 1165 Oslo</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact" aria-label="Kontakt oss">
+      <div class="container">
+        <h2>Kontakt oss</h2>
+        <p>
+          Ta gjerne kontakt for befaring, tilbud eller spørsmål om våre
+          tjenester.
+        </p>
+        <div class="contact-info">
+          <p>
+            <strong>E-post:</strong>
+            <a href="mailto:post@oberstelektro.no">post@oberstelektro.no</a>
+          </p>
+          <p>
+            <strong>Adresse:</strong> Oberst Rodes vei 108B, 1165 Oslo
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; {new Date().getFullYear()} Oberst Elektro AS. Alle rettigheter reservert.</p>
+      <p>Org.nr: 932 564 467</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* Header */
+  header {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  nav a:hover {
+    border-bottom-color: var(--color-accent);
+    color: #fff;
+  }
+
+  /* Container */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+    color: var(--color-primary);
+  }
+
+  /* Sections */
+  section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  /* Services */
+  .services {
+    background-color: var(--color-bg-alt);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .service-card {
+    background-color: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .service-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  /* About */
+  .about p {
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .info-item {
+    background-color: var(--color-bg-alt);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+
+  .info-item dt {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .info-item dd {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* Contact */
+  .contact {
+    background-color: var(--color-bg-alt);
+  }
+
+  .contact-info {
+    background-color: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: auto;
+    text-align: center;
+  }
+
+  footer p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  footer p + p {
+    margin-top: 0.25rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .hero {
+      padding: 2.5rem 0;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    nav ul {
+      gap: 1rem;
+    }
+  }
+</style>

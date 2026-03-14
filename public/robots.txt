@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oberstelektro.no/sitemap.xml
