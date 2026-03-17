@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Side ikke funnet – Oberst Elektro AS"
+  description="Siden du leter etter finnes ikke."
+>
+  <main class="not-found">
+    <div class="container">
+      <h1>404 – Siden ble ikke funnet</h1>
+      <p>Beklager, men siden du leter etter finnes ikke eller har blitt flyttet.</p>
+      <a href="/" class="btn">Gå til forsiden</a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+    color: #fff;
+  }
+</style>
